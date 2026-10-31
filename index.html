@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Techfest 30 · An Aetherial Renaissance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="aether"></canvas>
+
+  <nav>
+    <a class="logo" href="#top">TECH<b>FEST</b> · 2026</a>
+    <ul>
+      <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#compete">Compete</a></li>
+      <li><a href="#codex">Codex</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+    <a class="btn solid" href="https://techfest.org/" target="_blank" rel="noopener">Register</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div>
+      <div class="eyebrow">30th Edition · IIT Bombay · 16–18 Dec 2026</div>
+      <h1>An Aetherial <em>Renaissance</em></h1>
+      <p class="sub">Asia’s largest science and technology festival returns, where old-master curiosity meets the deep-tech frontier.</p>
+      <div class="cta">
+        <a class="btn solid" href="https://techfest.org/competitions" target="_blank" rel="noopener">Enter a Competition</a>
+        <a class="btn" href="https://techfest.org/workshops" target="_blank" rel="noopener">Explore Workshops</a>
+      </div>
+      <div class="count">
+        <div><span id="d">00</span><small>Days</small></div>
+        <div><span id="h">00</span><small>Hours</small></div>
+        <div><span id="m">00</span><small>Mins</small></div>
+        <div><span id="s">00</span><small>Secs</small></div>
+      </div>
+    </div>
+
+    <!-- Animated geometry (pure SVG, no 3D) -->
+    <div class="orrery" aria-hidden="true">
+      <svg viewBox="0 0 600 600" fill="none" stroke="var(--gold)" stroke-width="1">
+        <g class="spin2" opacity=".6">
+          <circle cx="300" cy="300" r="285" stroke-dasharray="2 9"/>
+          <rect x="95" y="95" width="410" height="410" transform="rotate(45 300 300)"/>
+        </g>
+        <g class="spin">
+          <circle cx="300" cy="300" r="232"/>
+          <rect x="136" y="136" width="328" height="328"/>
+          <polygon points="300,68 501,416 99,416" opacity=".7"/>
+          <polygon points="300,532 99,184 501,184" opacity=".7"/>
+          <circle cx="300" cy="68" r="6" fill="var(--aether)" stroke="none"/>
+          <circle cx="501" cy="416" r="6" fill="var(--aether)" stroke="none"/>
+          <circle cx="99" cy="416" r="6" fill="var(--aether)" stroke="none"/>
+        </g>
+        <circle class="pulse" cx="300" cy="300" r="150" stroke="var(--aether)"/>
+        <path d="M300 300 m0 -8 a8 8 0 0 1 8 8 a16 16 0 0 1 -16 16 a32 32 0 0 1 -32 -32 a64 64 0 0 1 64 -64 a104 104 0 0 1 104 104" stroke="var(--aether)" stroke-width="1.4"/>
+        <text x="300" y="332" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="120" fill="var(--ink)" stroke="none">30</text>
+      </svg>
+    </div>
+  </header>
+
+  <div class="marquee"><div class="track" id="track"></div></div>
+
+  <main>
+    <section class="rv">
+      <div class="stats">
+        <div><b data-n="30">0</b><span>Editions</span></div>
+        <div><b data-n="180" data-s="K+">0</b><span>Footfall</span></div>
+        <div><b data-n="2500" data-s="+">0</b><span>Colleges reached</span></div>
+        <div><b data-n="300" data-s="+">0</b><span>Events</span></div>
+      </div>
+    </section>
+
+    <section id="pillars">
+      <div class="head rv">
+        <div class="eyebrow">The Six Pillars</div>
+        <h2>One festival, <em>six ways in.</em></h2>
+        <p>Built entirely by IIT Bombay students since 1998.</p>
+      </div>
+      <div class="pillars" id="pill"></div>
+    </section>
+
+    <section id="compete">
+      <div class="head rv">
+        <div class="eyebrow">The Arena</div>
+        <h2>Where machines <em>meet their makers.</em></h2>
+      </div>
+      <div class="tabs rv" id="tabs">
+        <button class="on" data-f="all">All</button>
+        <button data-f="robo">Robotics</button>
+        <button data-f="aero">Aero &amp; Drones</button>
+        <button data-f="code">Code &amp; AI</button>
+      </div>
+      <div class="comps" id="comps"></div>
+    </section>
+
+    <section id="codex">
+      <div class="head rv">
+        <div class="eyebrow">The Codex</div>
+        <h2>Three decades of <em>building tomorrow.</em></h2>
+      </div>
+      <div class="tl" id="tl"></div>
+    </section>
+
+    <section id="join">
+      <div class="head rv"><div class="eyebrow">Take a Seat</div><h2>Lead, learn, <em>or represent.</em></h2></div>
+      <div class="split">
+        <div class="panel rv">
+          <div class="tag">Ignite · Catalyst</div>
+          <h3>Pitch for the national seed fund</h3>
+          <p>Campus societies run modules, then pitch at the National Leadership Summit for a ₹1,00,000 seed fund.</p>
+          <a class="btn" href="https://techfest.org/ignite" target="_blank" rel="noopener">Explore Ignite</a>
+        </div>
+        <div class="panel rv">
+          <div class="tag">Campus Ambassador</div>
+          <h3>Carry the flame to your college</h3>
+          <p>Represent Techfest on your campus and earn certificates, swag and internships.</p>
+          <a class="btn" href="https://ca.techfest.org" target="_blank" rel="noopener">Become an Ambassador</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="final rv">
+    <div class="eyebrow">16 · 17 · 18 December 2026</div>
+    <h2>The renaissance <em>is waiting.</em></h2>
+    <div class="cta">
+      <a class="btn solid" href="https://techfest.org/" target="_blank" rel="noopener">Register at techfest.org</a>
+      <a class="btn" href="https://techfest.org/accommodation" target="_blank" rel="noopener">Book Accommodation</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© Techfest, IIT Bombay</span>
+    <span><a href="mailto:info@techfest.org">info@techfest.org</a> · Concept design, unofficial</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
